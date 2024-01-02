@@ -11,7 +11,6 @@ import ReactPlayer from "react-player";
 
 import memojiBgGray from "../images/memoji_bg_lightgray.mp4";
 // import memojiBgBlack from "../images/memoji_bg_black_001.mp4";
-import memojiImg from "../images/memoji_001.png";
 import memojiBgDarkGray from "../images/memoji_bg_darkgray.mp4";
 
 function Chat({ showIntro, setShowIntro }) {
@@ -30,6 +29,10 @@ function Chat({ showIntro, setShowIntro }) {
 
   const handleSubmitQuery = (e) => {
     e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     setIsLoading(true);
 
     fetch("https://kchoi-io-backend.onrender.com/api/data", {

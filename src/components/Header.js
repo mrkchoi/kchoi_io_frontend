@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useMediaQuery } from "@uidotdev/usehooks";
-import { MediaQuery } from "../utill/MediaQuery";
 import { motion } from "framer-motion";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import useDarkMode from "../hooks/useDarkMode";
@@ -20,9 +18,6 @@ function Header() {
     colorTheme === "light" ? true : false,
   );
   const [menuOpen, setMenuOpen] = useState(false);
-  const isMobileDevice = useMediaQuery(MediaQuery.TABLET_MED);
-
-  const headerText = isMobileDevice ? "KC" : "Kenny Choi";
 
   const handleMenuClick = () => {
     setMenuOpen((s) => !s);
@@ -56,9 +51,7 @@ function Header() {
                   "mr-1 inline-block rounded-full py-2 text-2xl transition-all duration-150"
                 }
               >
-                <span className={menuOpen ? "text-white" : ""}>
-                  {headerText}
-                </span>
+                <span className={menuOpen ? "text-white" : ""}>Kenny Choi</span>
               </NavLink>
             </li>
             <li className="hidden py-2 text-gray-500 lg:inline-block dark:text-gray-400">
