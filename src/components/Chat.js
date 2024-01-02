@@ -61,7 +61,7 @@ function Chat({ showIntro, setShowIntro }) {
 
   return (
     // Chat Outer Container
-    <div className="container mx-auto flex min-h-[85dvh] flex-col justify-between p-6">
+    <div className="container mx-auto flex min-h-[85svh] flex-col justify-between p-6">
       <div className="chat_inner_container flex flex-1 flex-col-reverse items-center justify-end sm:h-full sm:flex-row sm:items-center sm:justify-between">
         <motion.div
           className="chat_left mb-12 mr-2 self-start sm:self-center"
@@ -79,52 +79,38 @@ function Chat({ showIntro, setShowIntro }) {
           initial={{ opacity: 0, scale: 0.75, y: 200 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
         >
-          {/* <video
-            src={memojiBgGray}
-            loop={true}
-            autoPlay={true}
-            className="max-w-36 sm:max-w-72 dark:hidden"
-            muted={true}
-            data-autoplay={true}
-          ></video>
-          <video
-            src={memojiBgDarkGray}
-            loop={true}
-            autoPlay={true}
-            className="hidden max-w-36 sm:max-w-72 dark:block"
-            muted={true}
-            data-autoplay={true}
-          ></video> */}
-          {isMobileDevice ? (
+          {/* {isMobileDevice ? (
             <img
               src={memojiImg}
               className="max-h-36 max-w-36"
               alt="KC memoji"
             />
-          ) : (
-            <>
-              <ReactPlayer
-                url={memojiBgGray}
-                loop={true}
-                autoPlay={true}
-                muted={true}
-                controls={false}
-                playing={true}
-                className="max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:hidden"
-                style={{ pointerEvents: "none" }}
-              />
-              <ReactPlayer
-                url={memojiBgDarkGray}
-                loop={true}
-                autoPlay={true}
-                muted={true}
-                controls={false}
-                playing={true}
-                className="hidden max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:block"
-                style={{ pointerEvents: "none" }}
-              />
-            </>
-          )}
+          ) : ( */}
+          <>
+            <ReactPlayer
+              url={memojiBgGray}
+              loop={true}
+              autoPlay={true}
+              muted={true}
+              controls={false}
+              playing={true}
+              playsinline={true}
+              className="max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:hidden"
+              style={{ pointerEvents: "none" }}
+            />
+            <ReactPlayer
+              url={memojiBgDarkGray}
+              loop={true}
+              autoPlay={true}
+              muted={true}
+              controls={false}
+              playing={true}
+              playsinline={true}
+              className="hidden max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:block"
+              style={{ pointerEvents: "none" }}
+            />
+          </>
+          {/* )} */}
         </motion.div>
       </div>
       <ChatInput
