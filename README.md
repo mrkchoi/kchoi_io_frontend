@@ -1,1 +1,1 @@
-AI - RAG chat agent. Built w/ python, flask, llama-index, pineconeDB, react, tailwind.
+Frontend for kchoi.io built with React, Tailwind, Framer Motion
