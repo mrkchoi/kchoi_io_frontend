@@ -25,7 +25,7 @@ function Chat({ showIntro, setShowIntro }) {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch("/api/data", {
+    fetch("https://kchoi-io-backend.onrender.com/api/data", {
       method: "POST",
       body: JSON.stringify({ query }),
       headers: {
