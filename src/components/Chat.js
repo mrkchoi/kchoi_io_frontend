@@ -4,8 +4,6 @@ import ChatIntro from "./ChatIntro";
 import ChatResponse from "./ChatResponse";
 import ChatInput from "./ChatInput";
 
-import { useMediaQuery } from "@uidotdev/usehooks";
-import { MediaQuery } from "../utill/MediaQuery";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 
@@ -18,9 +16,6 @@ function Chat({ showIntro, setShowIntro }) {
   const [query, setQuery] = useState("Briefly Introduce Kenny");
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef(null);
-  const isMobileDevice = useMediaQuery(MediaQuery.MOBILE);
-
-  console.log("isMobileDevice: ", isMobileDevice);
 
   useEffect(() => {
     setIsLoading(false);
@@ -82,38 +77,28 @@ function Chat({ showIntro, setShowIntro }) {
           initial={{ opacity: 0, scale: 0.75, y: 200 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
         >
-          {/* {isMobileDevice ? (
-            <img
-              src={memojiImg}
-              className="max-h-36 max-w-36"
-              alt="KC memoji"
-            />
-          ) : ( */}
-          <>
-            <ReactPlayer
-              url={memojiBgGray}
-              loop={true}
-              autoPlay={true}
-              muted={true}
-              controls={false}
-              playing={true}
-              playsinline={true}
-              className="max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:hidden"
-              style={{ pointerEvents: "none" }}
-            />
-            <ReactPlayer
-              url={memojiBgDarkGray}
-              loop={true}
-              autoPlay={true}
-              muted={true}
-              controls={false}
-              playing={true}
-              playsinline={true}
-              className="hidden max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:block"
-              style={{ pointerEvents: "none" }}
-            />
-          </>
-          {/* )} */}
+          <ReactPlayer
+            url={memojiBgGray}
+            loop={true}
+            autoPlay={true}
+            muted={true}
+            controls={false}
+            playing={true}
+            playsinline={true}
+            className="max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:hidden"
+            style={{ pointerEvents: "none" }}
+          />
+          <ReactPlayer
+            url={memojiBgDarkGray}
+            loop={true}
+            autoPlay={true}
+            muted={true}
+            controls={false}
+            playing={true}
+            playsinline={true}
+            className="hidden max-h-36 max-w-36 sm:max-h-72 sm:max-w-72 dark:block"
+            style={{ pointerEvents: "none" }}
+          />
         </motion.div>
       </div>
       <ChatInput
