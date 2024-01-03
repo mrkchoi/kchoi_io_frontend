@@ -8,7 +8,7 @@ const Experience = () => {
   const data = version === VERSION.V1 ? experienceV1 : experienceV2;
 
   return (
-    <div className="min-h-full bg-white pb-72 pt-48 dark:bg-black">
+    <div className="min-h-full bg-white pb-48 pt-24 dark:bg-black">
       <motion.div
         className="container mx-auto p-6 md:p-12"
         initial={{ opacity: 0, scale: 0.75, y: 200 }}
