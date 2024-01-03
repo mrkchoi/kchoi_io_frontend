@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { VersionContext, VERSION } from "./components/VersionContext";
 import { BrowserRouter } from "react-router-dom";
 import Chat from "./components/Chat";
 import About from "./components/About";
@@ -10,16 +11,25 @@ import SkillsGrid from "./components/SkillsGrid";
 
 function App() {
   let [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Element name="top_scroll"></Element>
-      <Header />
-      <Chat showIntro={showIntro} setShowIntro={setShowIntro} />
-      <About />
-      <SkillsGrid />
-      <Experience />
-      <Footer />
-    </BrowserRouter>
+    <VersionContext.Provider value={VERSION.V1}>
+      <BrowserRouter>
+        <Element name="top_scroll"></Element>
+        <Header />
+        <Chat showIntro={showIntro} setShowIntro={setShowIntro} />
+        <About />
+        <SkillsGrid />
+        <Experience />
+        <Footer />
+      </BrowserRouter>
+    </VersionContext.Provider>
   );
 }
 

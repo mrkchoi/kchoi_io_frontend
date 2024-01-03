@@ -59,7 +59,7 @@ function Chat({ showIntro, setShowIntro }) {
 
   return (
     // Chat Outer Container
-    <div className="container mx-auto flex min-h-[85svh] flex-col justify-between p-6">
+    <div className="container mx-auto flex min-h-[85svh] flex-col justify-between p-6 sm:min-h-[90vh]">
       <div className="chat_inner_container flex flex-1 flex-col-reverse items-center justify-end sm:h-full sm:flex-row sm:items-center sm:justify-between">
         <motion.div
           className="chat_left mb-12 mr-2 self-start sm:self-center"

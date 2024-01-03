@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { VersionContext, VERSION } from "./VersionContext";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
@@ -7,12 +8,15 @@ import { Link } from "react-scroll";
 
 import MobileNav from "./MobileNav";
 
-import resume from "../files/Kenneth Choi CV 2023.pdf";
+import resumeV1 from "../files/Kenneth Choi Resume 2023.pdf";
+import resumeV2 from "../files/Kenneth Choi CV 2023.pdf";
 import sparkle_gif from "../images/sparkle_resting_v2_1ff6f6a71f2d298b1a31.gif";
 
 import "../styles/Header.css";
 
 function Header() {
+  const version = useContext(VersionContext);
+
   const [colorTheme, setTheme] = useDarkMode();
   const [darkMode, setDarkMode] = useState(
     colorTheme === "light" ? true : false,
@@ -89,7 +93,7 @@ function Header() {
             </li>
             <li className="mr-12 hidden md:inline-block">
               <a
-                href={resume}
+                href={version === VERSION.V1 ? resumeV1 : resumeV2}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full py-2  transition-all duration-150 hover:cursor-pointer"

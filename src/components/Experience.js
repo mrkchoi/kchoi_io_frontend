@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { VersionContext, VERSION } from "./VersionContext";
 import { motion } from "framer-motion";
+import { experienceV1, experienceV2 } from "../files/experience";
 
 const Experience = () => {
+  const version = useContext(VersionContext);
+  const data = version === VERSION.V1 ? experienceV1 : experienceV2;
+
   return (
     <div className="min-h-full bg-white pb-72 pt-48 dark:bg-black">
       <motion.div
@@ -21,31 +26,13 @@ const Experience = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>2021-2023</td>
-                <td>Nika Digital Agency</td>
-                <td className="hidden md:block">Frontend Engineer</td>
-              </tr>
-              <tr>
-                <td>2019-2021</td>
-                <td>Facebook</td>
-                <td className="hidden md:block">Software Engineer</td>
-              </tr>
-              <tr>
-                <td>2016-2019</td>
-                <td>Nika Digital Agency</td>
-                <td className="hidden md:block">Marketing Manager</td>
-              </tr>
-              <tr>
-                <td>2015-2016</td>
-                <td>7Bev Corporation</td>
-                <td className="hidden md:block">Marketing Manager</td>
-              </tr>
-              <tr>
-                <td>2009-2010</td>
-                <td>UCLA Marketing</td>
-                <td className="hidden md:block">Network Administrator</td>
-              </tr>
+              {data.map((data) => (
+                <tr key={data.id}>
+                  <td>{data.year}</td>
+                  <td>{data.company}</td>
+                  <td className="hidden md:block">{data.position}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

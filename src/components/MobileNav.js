@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { VersionContext, VERSION } from "./VersionContext";
 import { motion, AnimatePresence } from "framer-motion";
 
-import resume from "../files/Kenneth Choi CV 2023.pdf";
+import resumeV1 from "../files/Kenneth Choi Resume 2023.pdf";
+import resumeV2 from "../files/Kenneth Choi CV 2023.pdf";
 import { Link } from "react-scroll";
 
 const MobileNav = ({ setMenuOpen }) => {
+  const version = useContext(VersionContext);
   return (
     <AnimatePresence>
       <motion.div
@@ -55,7 +58,7 @@ const MobileNav = ({ setMenuOpen }) => {
             </li>
             <li className="text-center">
               <a
-                href={resume}
+                href={version === VERSION.V1 ? resumeV1 : resumeV2}
                 target="_blank"
                 rel="noreferrer"
                 className="mr-1 cursor-pointer rounded-full py-2 transition-all duration-150"

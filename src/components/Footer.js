@@ -1,13 +1,16 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { VersionContext, VERSION } from "./VersionContext";
 import { motion } from "framer-motion";
 import { Link, Element } from "react-scroll";
 
 import kc_dark from "../images/kc_dark.png";
 import kc_light from "../images/kc_light.png";
-import resume from "../files/Kenneth Choi CV 2023.pdf";
+import resumeV1 from "../files/Kenneth Choi Resume 2023.pdf";
+import resumeV2 from "../files/Kenneth Choi CV 2023.pdf";
 
 const Footer = () => {
+  const version = useContext(VersionContext);
+
   return (
     <div
       className="relative mx-auto flex min-h-screen w-screen items-center bg-black text-white dark:bg-white dark:text-black"
@@ -36,7 +39,7 @@ const Footer = () => {
           <div className="footer_bottom flex flex-col md:flex-row">
             <div className="links mr-24">
               <a
-                href={resume}
+                href={version === VERSION.V1 ? resumeV1 : resumeV2}
                 target="_blank"
                 rel="noreferrer"
                 className="group"
