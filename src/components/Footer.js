@@ -6,7 +6,7 @@ import { Link, Element } from "react-scroll";
 import kc_dark from "../images/kc_dark.png";
 import kc_light from "../images/kc_light.png";
 import resumeV1 from "../files/Kenneth Choi Resume 2023.pdf";
-import resumeV2 from "../files/Kenneth Choi CV 2023.pdf";
+import resumeV2 from "../files/Kenneth Choi CV 2024.pdf";
 
 const Footer = () => {
   const version = useContext(VersionContext);

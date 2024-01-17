@@ -4,7 +4,7 @@ import { VersionContext, VERSION } from "./VersionContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 import resumeV1 from "../files/Kenneth Choi Resume 2023.pdf";
-import resumeV2 from "../files/Kenneth Choi CV 2023.pdf";
+import resumeV2 from "../files/Kenneth Choi CV 2024.pdf";
 import { Link } from "react-scroll";
 
 const MobileNav = ({ setMenuOpen }) => {
