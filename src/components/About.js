@@ -18,7 +18,7 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Kenny Choi is a Full Stack Software Engineer experienced in
+            Kenny Choi is a full stack software engineer experienced in
             enterprise development. He is driven by technical challenges and a
             love for collaboration. He aspires to create elegant solutions to
             complex problems.

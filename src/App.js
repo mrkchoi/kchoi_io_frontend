@@ -8,9 +8,20 @@ import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import { Element } from "react-scroll";
 import SkillsGrid from "./components/SkillsGrid";
+import Lenis from "@studio-freight/lenis";
 
 function App() {
   let [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     window.scrollTo({
@@ -19,7 +30,7 @@ function App() {
   }, []);
 
   return (
-    <VersionContext.Provider value={VERSION.V1}>
+    <VersionContext.Provider value={VERSION.V2}>
       <BrowserRouter>
         <Element name="top_scroll"></Element>
         <Header />
