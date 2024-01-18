@@ -3,6 +3,26 @@ import { motion } from "framer-motion";
 import { Element } from "react-scroll";
 import img from "../images/portrait.jpg";
 
+const imgVariants = {
+  initial: {
+    scaleY: 1,
+  },
+  animate: {
+    scaleY: 0,
+    transition: {
+      duration: 0.75,
+      ease: [0.63, -0.04, 0.45, 0.95],
+    },
+  },
+  exit: {
+    scaleY: 1,
+    transition: {
+      duration: 0.75,
+      ease: [0.63, -0.04, 0.45, 0.95],
+    },
+  },
+};
+
 const About = () => {
   return (
     <div className="bg-white dark:bg-black" id="about">
@@ -24,8 +44,15 @@ const About = () => {
             love for collaboration. He aspires to create elegant solutions to
             complex problems.
           </motion.p>
-          <div className="md:mt-24">
+          <div className="relative md:mt-24">
             <img src={img} alt="" className="md:max-w-[25vw]" />
+            <motion.div
+              className="overlay absolute bottom-0 left-0 right-0 top-0 origin-bottom bg-[rgba(255,255,255,1)]"
+              variants={imgVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            ></motion.div>
           </div>
         </div>
         <motion.div
