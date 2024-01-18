@@ -34,8 +34,7 @@ const SkillsGrid = () => {
           />
           <ScrollAnimationCard
             classList="min-h-[350px] w-full rounded-3xl p-[30px] text-3xl font-bold md:w-[calc(50%-10px)] md:text-3xl lg:min-h-[400px] lg:p-[50px] lg:text-4xl xl:text-4xl dark:text-black"
-            content="Bridge the gap between frontend and backend — speaking
-            both languages."
+            content="Bridge the gap between frontend and backend — bringing beautiful UIs to life."
             bgColor="rgb(243, 154, 142)"
           />
           <ScrollAnimationCard
@@ -45,7 +44,7 @@ const SkillsGrid = () => {
           />
           <ScrollAnimationCard
             classList="min-h-[350px] w-full rounded-3xl p-[30px] text-3xl font-bold md:w-[calc(58.333%-10px)] md:text-3xl lg:min-h-[400px] lg:p-[50px] lg:text-4xl xl:text-4xl dark:text-black"
-            content="Giving you the foundations to scale — from UI development to API design."
+            content="Giving you the foundations to scale — from UI development to API integration."
             bgColor="rgb(156, 183, 235)"
           />
           <ScrollAnimationCard
