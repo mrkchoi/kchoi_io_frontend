@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
+import img from "../images/portrait.jpg";
 
 const About = () => {
   return (
@@ -11,9 +12,9 @@ const About = () => {
         initial={{ opacity: 0, scale: 0.75, y: 200 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
       >
-        <div className="about_top">
+        <div className="about_top mb-24 flex flex-col items-start gap-24 md:flex-row">
           <motion.p
-            className="mb-16 mt-0 text-3xl md:mb-24 md:mt-24 md:text-6xl"
+            className="mt-0 text-3xl sm:text-4xl md:mb-24 md:mt-24 lg:text-6xl"
             initial={{ opacity: 0, scale: 0.75, y: 200 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
@@ -23,6 +24,9 @@ const About = () => {
             love for collaboration. He aspires to create elegant solutions to
             complex problems.
           </motion.p>
+          <div className="md:mt-24">
+            <img src={img} alt="" className="md:max-w-[25vw]" />
+          </div>
         </div>
         <motion.div
           className="about_bottom flex flex-col justify-between md:flex-row"
